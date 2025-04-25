@@ -1,0 +1,30 @@
+@use "../global/mixin" as *;
+@use '../global/config' as *; 
+
+.dosha-text{
+    text-align: center;
+    padding-top: 30px;
+}
+.dosha-contents{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px;
+}
+.dosha-contents-card{
+    flex:1;
+}
+.dosha-contents-title{
+    font-size: 14px;
+}
+.dosha-contents-subtitle{
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.dosha-image{
+    max-width: 200px;
+    width: 100%;
+    max-height: 190px;
+    margin: 0 auto;
+}

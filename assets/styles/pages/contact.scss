@@ -1,0 +1,67 @@
+@use "../global/mixin" as *;
+@use '../global/config' as *; 
+
+.contact-form{
+    margin: 40px auto;
+    max-width: 700px;
+    input,textarea{
+        background-color: $whiteColor;
+        width:100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+
+.wpcf7-form-control-wrap{
+    display: block;
+    max-width: 700px;
+    margin: 0px auto;
+    width: 100%;
+}
+
+.wpcf7-list-item {
+    margin-left: 0;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 16px;
+    @include sp{
+        font-size: 14px;
+    }
+
+}
+
+.check-privacy label {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    @include sp{
+        font-size: 14px;
+    }
+  }
+  
+  .check-privacy label {
+    display: flex;
+    align-items: flex-start;  // ← ✅ 中央じゃなく上寄せにすることで折り返し時ズレ防止
+    flex-wrap: wrap;         // ✅ 折り返しOKにする
+
+  }
+  
+  .check-privacy input[type="checkbox"] {
+    margin-top: 4px;         // チェックボックスの縦位置調整
+    flex-shrink: 0;
+  }
+  
+  .check-privacy a {
+    color: #007acc;
+    padding-left: 5px;
+    text-decoration: underline;
+
+    white-space: nowrap;      // ← ✅「プライバシーポリシー」だけで改行しないように
+    word-break: break-word;  // ✅ モバイルで長いURLがある場合に備えて
+  }
+  
+  

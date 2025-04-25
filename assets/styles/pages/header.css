@@ -1,0 +1,143 @@
+#header {
+  position: fixed;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 80px;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1200px;
+}
+
+.navi-menu {
+  display: flex;
+  gap: 16px;
+}
+
+.menu-title:hover {
+  color: gray;
+}
+
+.site-title {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.menu-item-has-children {
+  position: relative;
+}
+.menu-item-has-children .sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 0.5em 0;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.menu-item-has-children .sub-menu li {
+  white-space: nowrap;
+}
+.menu-item-has-children .sub-menu li a {
+  display: block;
+  padding: 0.5em 1.2em;
+  color: #333;
+  text-decoration: none;
+}
+.menu-item-has-children .sub-menu li a:hover {
+  background: #f0f0f0;
+}
+.menu-item-has-children:hover .sub-menu {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .navi {
+    display: none;
+  }
+  .humberger {
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .humberger span {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 2px;
+    left: 9px;
+    background-color: black;
+  }
+  .humberger span:nth-child(1) {
+    top: 9px;
+  }
+  .humberger span:nth-child(2) {
+    top: 17px;
+  }
+  .humberger span:nth-child(3) {
+    top: 25px;
+  }
+  .active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    height: 100vh;
+    z-index: 100;
+  }
+  .active .site-title {
+    display: none;
+  }
+  .active .humberger span {
+    transition: 0.5s;
+    z-index: 20;
+  }
+  .active .humberger span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 18px;
+  }
+  .active .humberger span:nth-child(2) {
+    display: none;
+  }
+  .active .humberger span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 18px;
+  }
+  .active .navi {
+    display: flex;
+  }
+  .active .sub-menu {
+    left: 60%;
+    top: -7px;
+  }
+  .active .navi-menu {
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    gap: 100px;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+  }
+}/*# sourceMappingURL=header.css.map */

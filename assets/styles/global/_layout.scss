@@ -1,0 +1,13 @@
+@use "mixin" as *;
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0 40px;
+  max-width: 1200px;
+  @include tab {
+    padding: 0 20px;
+  }
+}
+a:hover{
+  opacity: 0.8;
+}

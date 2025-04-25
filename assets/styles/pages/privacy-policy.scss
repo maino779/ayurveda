@@ -1,0 +1,16 @@
+@use "../global/mixin" as *;
+@use '../global/config' as *; 
+
+
+.privacy-text{
+    p{
+        padding-bottom: 20px;
+    }
+    @include sp{
+        font-size: 14px;
+    }
+    a{
+    color: #007acc;
+    text-decoration: underline;
+    }
+}

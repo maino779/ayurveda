@@ -1,0 +1,12 @@
+.privacy-text p {
+  padding-bottom: 20px;
+}
+@media screen and (max-width: 375px) {
+  .privacy-text {
+    font-size: 14px;
+  }
+}
+.privacy-text a {
+  color: #007acc;
+  text-decoration: underline;
+}/*# sourceMappingURL=privacy-policy.css.map */

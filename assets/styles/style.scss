@@ -1,0 +1,199 @@
+@charset "UTF-8";
+
+@use "global/mixin" as *;
+@use "global/reset";
+@use "global/config";
+@use "global/components";
+@use "global/layout";
+@use "pages/about";
+@use "pages/header";
+@use "pages/footer";
+@use "pages/news";
+@use "pages/dosha";
+@use "pages/pickup";
+@use "pages/popular";
+@use "pages/contact";
+@use "pages/profile";
+@use "pages/search";
+@use "pages/privacy-policy";
+@use "base/base";
+
+
+.mainvisual{
+    background-image: url(../img/image/fv.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    position: relative;
+   
+    @include sp{
+        height: 600px;
+    }
+    .wrapper {
+        position: relative;
+        height: 100%; // ← これを追加！
+      }
+    
+      .mainvisual-title-contents {
+        position: absolute;
+        top: 55%; // ← ここを調整するだけでOK！（60〜65%くらいがおすすめ）
+        right: 50px;
+        transform: translateY(-50%); // このままでOK。ずらした分を戻す
+      }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          rgba(255, 255, 255, 0.1), 
+          rgba(0, 0, 0, 0.2)
+        ); //←ここで明るさを均一に落とす
+    }
+    h1{
+        font-size: 48px;
+        color: #2a2a2a;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        @include tab{
+            font-size: 40px;
+        }
+    }
+    h2{
+        font-size: 28px;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        padding-bottom: 40px;
+        @include tab{
+            font-size: 15px;
+        }
+    }
+}
+
+
+  
+  
+  
+  
+  
+//投稿カード
+
+.post-card-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;  
+    @include tab{
+        padding: 0;
+        grid-template-columns: repeat(2, 1fr); // ← ここで2列固定！
+    }           
+}
+/*repeat(auto-fit, ...): 利用可能なスペースに応じて、できるだけ多くのカラムを自動的に生成します。auto-fit は、アイテムが存在しない場合でも空のカラムを作成せず、既存のカラムを拡張してスペースを埋めます。​
+
+minmax(280px, 1fr): 各カラムの幅を最小280px、最大で利用可能なスペースの割合（1fr）まで拡張可能に設定します。これにより、カラムはコンテナのサイズに応じて柔軟に調整されます。*/
+.post-card-content{
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+//カテゴリーセクション
+//投稿カード
+.category-posts{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* ← 3列固定に */
+   // grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;   
+    @include tab{
+        padding: 0;
+        grid-template-columns: repeat(2, 1fr); // ← ここで2列固定！
+    }                      // ← ブロック全体は中央寄せ
+}
+
+//single.php
+.single-post{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    
+}
+.single-post-title{
+    margin: 0 auto 40px auto;
+    @include sp{
+        font-size: 18px;
+    }
+}
+.single-date{
+    margin: 20px auto 60px auto;
+    font-size: 16px;
+    @include sp{
+        font-size: 13px;
+        margin-bottom: 30px;
+    }
+}
+.single-text{
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+
+    @include sp{
+        font-size: 16px;
+    }
+}
+.single-post-image{
+    margin: 0 auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+.post-nothing{
+    padding-top: 20px;
+}
+// いいねボタンはWP ULikeのテンプレート＋下のCSSで整えられます
+.sns-btn{
+
+    margin-top: 40px;
+    p{
+        font-size: 13px;
+    }
+}
+  // SNSフォローボタン
+  .follow-icons {
+ 
+    margin:10px  0 10px 0px;
+  
+    p {
+   
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+  }
+  .wpulike{
+    padding-left: 6px;
+  }
+  .follow-btn {
+    display: inline-block;
+    margin: 0 6px;
+    font-size: 18px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .follow-btn.twitter { background-color: #000; }
+  .follow-btn.rss { background-color: #ff6600; }
+  .follow-btn:hover { opacity: 0.8; }
+  .follow-btn.note {
+    background-color: #41c9b4; /* Noteっぽいミントグリーン */
+  }
+  

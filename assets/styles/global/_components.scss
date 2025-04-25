@@ -1,0 +1,169 @@
+@use "../global/mixin" as *;
+@use "../global/config" as *;
+
+//検索窓
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 0px 8px;
+  width: 240px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); // ← これ追加！
+  .search-field {
+    border: none;
+    padding: 0px 0 0px 16px;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+
+    @include sp {
+      width: 100%;
+    }
+  }
+
+  .search-submit {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+    color: #333;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+//セクションタイトル・疑似要素線
+.section-title {
+  font-size: 30px;
+  text-align: center;
+  line-height: 1.4;
+  position: relative;
+  padding: 40px 0;
+
+  @include sp {
+    font-size: 15px;
+    padding: 20px 0;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    width: 200px;
+    height: 1px;
+    background-color: $blackColor;
+    top: 36px;
+    left: 50%;
+    transform: translateX(-105%);
+    @include sp {
+      width: 100px;
+      top: 20px;
+    }
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    width: 200px;
+    height: 1px;
+    background-color: $blackColor;
+    top: 146px;
+    left: 50%; //固定
+    transform: translateX(12%); //固定・ここを調整
+    @include sp {
+      width: 100px;
+      top: 76px;
+    }
+  }
+}
+.section-subtitle {
+  text-align: center;
+  font-size: 18px;
+  @include sp {
+    font-size: 14px;
+  }
+}
+
+//カテゴリータイトル
+.category-title {
+  background-color: #fffbf5;
+}
+//投稿タイトル
+.single-title, .search-title, .service-category-title {
+  background-color: $lightbedge;
+}
+//セクション
+.section {
+  padding-bottom: 40px;
+}
+.popular-section,
+.dosha-section {
+  background-color: $whiteColor;
+}
+
+.about-section,
+.pickup-section,
+.news-section,
+.contact-section,
+.privacy-policy-section,
+.profile-section {
+  background-color: $highbedge;
+}
+
+.single-section,
+.contact-section,
+.category-archive,
+.privacy-policy-section,
+.profile-section,
+.service-category-section {
+  padding-top: 40px;
+}
+//パンくずlist
+.bread-line {
+  background-color: #efe8da;
+  padding: 16px 0;
+  align-items: center;
+}
+.breadcrumb {
+  font-size: 14px;
+  margin: 0 auto;
+  align-content: center;
+  padding: 0 20px;
+  max-width: 1200px;
+  @include tab {
+    font-size: 12px;
+  }
+}
+
+//ボタン
+.btn {
+  display: block;
+  cursor: pointer;
+  padding: 4px 16px;
+  width: 200px;
+  height: auto;
+  align-items: center;
+  text-align: center;
+  border: 1px solid $greenColor;
+  background-color: $greenColor;
+  color: $whiteColor;
+  font-weight: 600;
+  border-radius: 20px;
+  margin: 60px auto 0 auto;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3); // ← ほんのり影で読みやすく
+  &:hover {
+    background-color: $whiteColor;
+    color: $greenColor;
+    text-shadow: none;
+  }
+  @include tab {
+    width: 100%;
+  }
+}

@@ -1,0 +1,62 @@
+.contact-form {
+  margin: 40px auto;
+  max-width: 700px;
+}
+.contact-form input, .contact-form textarea {
+  background-color: white;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.wpcf7-form-control-wrap {
+  display: block;
+  max-width: 700px;
+  margin: 0px auto;
+  width: 100%;
+}
+
+.wpcf7-list-item {
+  margin-left: 0;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 16px;
+}
+@media screen and (max-width: 375px) {
+  .wpcf7-list-item {
+    font-size: 14px;
+  }
+}
+
+.check-privacy label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+}
+@media screen and (max-width: 375px) {
+  .check-privacy label {
+    font-size: 14px;
+  }
+}
+
+.check-privacy label {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.check-privacy input[type=checkbox] {
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.check-privacy a {
+  color: #007acc;
+  padding-left: 5px;
+  text-decoration: underline;
+  white-space: nowrap;
+  word-break: break-word;
+}/*# sourceMappingURL=contact.css.map */
