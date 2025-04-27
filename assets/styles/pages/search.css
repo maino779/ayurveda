@@ -74,7 +74,6 @@
 
 .search-pick-popular-contents {
   margin: 60px auto 0 auto;
-  padding-left: 10px;
   max-width: 800px;
 }
 .search-pick-popular-contents ul {
@@ -88,6 +87,7 @@
 .search-pick-popular-contents h3 {
   font-size: 21px;
   padding-bottom: 20px;
+  margin-left: -10px;
 }
 @media screen and (max-width: 768px) {
   .search-pick-popular-contents h3 {

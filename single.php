@@ -84,7 +84,7 @@
 
     <!-- おすすめ・人気記事 -->
     <div class="search-pick-popular-contents ">
-<h3 class="search-subsection-title">こんな記事も読まれています</h3>
+<h3 class="search-subsection-title">🖕こんな記事も読まれています</h3>
 
   <!-- おすすめ記事（カテゴリ 'pickup'） -->
   <div class="pickup-articles">

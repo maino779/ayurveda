@@ -102,6 +102,10 @@ table {
   position: relative;
   padding: 40px 0;
 }
+.section-title h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
 @media screen and (max-width: 375px) {
   .section-title {
     font-size: 15px;
@@ -155,7 +159,7 @@ table {
   background-color: #fffbf5;
 }
 
-.single-title, .search-title, .service-category-title {
+.dosha-check-title, .single-title, .search-title, .service-category-title {
   background-color: #FFFBF5;
 }
 
@@ -177,6 +181,7 @@ table {
   background-color: #faefe0;
 }
 
+.dosha-check-section,
 .single-section,
 .contact-section,
 .category-archive,
@@ -290,6 +295,7 @@ a:hover {
 .site-title {
   font-weight: bold;
   font-size: 24px;
+  font-family: "Raleway", sans-serif;
 }
 
 .menu-item-has-children {
@@ -401,7 +407,7 @@ a:hover {
   }
 }
 #footer {
-  background-color: #FFFBF5;
+  background-color: white;
   text-align: center;
   font-size: 12px;
   align-content: center;
@@ -549,6 +555,11 @@ a:hover {
   overflow: hidden;
   height: 180px;
 }
+@media screen and (max-width: 375px) {
+  .post-image {
+    height: 100px;
+  }
+}
 .post-image img {
   width: 100%;
   height: 100%;
@@ -572,6 +583,8 @@ a:hover {
   .post-image .post-category-name {
     font-size: 10px;
     padding: 3px 8px;
+    top: 8px;
+    left: 8px;
   }
 }
 
@@ -831,7 +844,6 @@ a:hover {
 
 .search-pick-popular-contents {
   margin: 60px auto 0 auto;
-  padding-left: 10px;
   max-width: 800px;
 }
 .search-pick-popular-contents ul {
@@ -845,6 +857,7 @@ a:hover {
 .search-pick-popular-contents h3 {
   font-size: 21px;
   padding-bottom: 20px;
+  margin-left: -10px;
 }
 @media screen and (max-width: 768px) {
   .search-pick-popular-contents h3 {
@@ -857,6 +870,28 @@ a:hover {
 }
 .search-pick-popular-contents li {
   padding-bottom: 6px;
+}
+
+.dosha-check-test {
+  margin: 60px auto 0 auto;
+  max-width: 800px;
+}
+
+.dosha-check-text-title {
+  margin: 0 auto;
+}
+
+.dosha-check-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.dosha-check-section .result {
+  display: none;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #faefe0;
+  border-radius: 8px;
+  font-weight: bold;
 }
 
 .privacy-text p {
@@ -923,21 +958,25 @@ img {
   background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
 }
 .mainvisual h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
   font-size: 48px;
   color: #2a2a2a;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 375px) {
   .mainvisual h1 {
-    font-size: 40px;
+    font-size: 28px;
   }
 }
 .mainvisual h2 {
   font-size: 28px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-weight: 500;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding-bottom: 40px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 375px) {
   .mainvisual h2 {
     font-size: 15px;
   }

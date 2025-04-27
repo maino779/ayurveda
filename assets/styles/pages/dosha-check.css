@@ -1,0 +1,21 @@
+.dosha-check-test {
+  margin: 60px auto 0 auto;
+  max-width: 800px;
+}
+
+.dosha-check-text-title {
+  margin: 0 auto;
+}
+
+.dosha-check-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.dosha-check-section .result {
+  display: none;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #faefe0;
+  border-radius: 8px;
+  font-weight: bold;
+}/*# sourceMappingURL=dosha-check.css.map */

@@ -15,6 +15,7 @@
 @use "pages/contact";
 @use "pages/profile";
 @use "pages/search";
+@use "pages/dosha-check";
 @use "pages/privacy-policy";
 @use "base/base";
 
@@ -40,6 +41,7 @@
         top: 55%; // ← ここを調整するだけでOK！（60〜65%くらいがおすすめ）
         right: 50px;
         transform: translateY(-50%); // このままでOK。ずらした分を戻す
+      
       }
 
     &::before {
@@ -54,18 +56,22 @@
         ); //←ここで明るさを均一に落とす
     }
     h1{
+        font-family: 'Raleway', sans-serif;
+        font-weight:500;
         font-size: 48px;
         color: #2a2a2a;
         text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        @include tab{
-            font-size: 40px;
+        @include sp{
+            font-size: 28px;
         }
     }
     h2{
         font-size: 28px;
+        font-family: 'Alegreya Sans SC', sans-serif;
+        font-weight: 500;
         text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
         padding-bottom: 40px;
-        @include tab{
+        @include sp{
             font-size: 15px;
         }
     }

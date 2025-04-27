@@ -1,0 +1,25 @@
+@use "../global/mixin" as *;
+@use "../global/config" as *;
+
+.dosha-check-test {
+  margin: 60px auto 0 auto;
+  max-width: 800px;
+}
+.dosha-check-text-title {
+  margin: 0 auto;
+}
+
+.dosha-check-section {
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .result {
+    display: none;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: $highbedge;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+}
