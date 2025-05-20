@@ -6,7 +6,7 @@
   max-width: 800px;
 }
 .dosha-check-text-title {
-  margin: 0 auto;
+  margin: 20px  auto ;
 }
 
 .dosha-check-section {
@@ -19,7 +19,19 @@
     margin-top: 1.5rem;
     padding: 1rem;
     background: $highbedge;
-    border-radius: 8px;
-    font-weight: bold;
+   text-align: center;
+    
   }
+}
+
+.btn-dosha-check{
+  margin-bottom: 20px;
+  width: 220px;
+}
+.next-button-wrap{
+ text-align: center;
+}
+.dosha-type{
+  color: red;
+  font-weight: bold;
 }

@@ -11,7 +11,9 @@
 
         
 <div class="wrapper">
-  <?php the_content(); ?>
+
+<?php echo do_shortcode('[contact-form-7 id="b53ff2b" title="お問い合わせ"]'); ?>
+
 </div>
 
 

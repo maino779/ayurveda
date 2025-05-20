@@ -1,61 +1,111 @@
 @use "../global/mixin" as *;
-@use '../global/config' as *; 
+@use "../global/config" as *;
 
-#header{
-    position: fixed;
-    background-color:$whiteColor;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 50;
-    height: 80px;
+#header {
+  position: fixed;
+  background-color: $whiteColor;
+  top: 0px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 80px;
 }
-.header-inner{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1200px;
+
+}
+
+.navi-menu {
+  display: flex;
+  gap: 30px;
+  @include tab{
+    flex-direction: column;
+    padding-left: 18px;
     width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-    max-width: 1200px;
-}
-.navi-menu{
-    display: flex;
-    gap: 16px;
-   
-}
-.menu-title{
-&:hover{
- color: gray;
-}
-}
-.site-title{
-    font-weight: bold;
-    font-size: 24px;
-    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+  }
 }
 
+
+
+.site-title {
+  font-weight: bold;
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  @include sp{
+    font-size: 19px;
+  }
+}
+
+/* PC用 hoverでサブメニュー */
+.menu-title {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 25px 0;
+  height: 100%;
+  @include tab{
+    display: block;
+    height: 0;
+    padding: 10px 0;  
+  }
+
+ &:hover {
+    color: gray;
+  }
+}
+
+//サブメニュー＞
+.sub-menu-left{
+  padding-right: 4px;
+}
+//ブログ・サービスメニュー
 .menu-item-has-children {
   position: relative;
 
+  &:hover{
+    .sub-menu{
+      display: block;
+      @include tab{
+        display: none;
+      }
+    }
+  }
+  //ｐｃ・サブメニュー非表示
   .sub-menu {
-    display: none;
+    display:none;
     position: absolute;
-    top: 100%;
-    left: 0;
+    top:96px;
+    right: -20px;
     background: white;
     border: 1px solid #ddd;
-    padding: 0.5em 0;
-    z-index: 10;
+    border-top: none;
+    padding: 30px 0 30px 0px;
+    z-index: 1;
+    min-width: 150px; // ★幅をつけるとクリックしやすくなる
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: -20px; // そして位置を戻す（親メニューに近づける）
 
+    @include tab{
+      display: block;
+      padding: 30px 0 0 0;
+    }
+
+   
     li {
       white-space: nowrap;
 
       a {
         display: block;
-        padding: 0.5em 1.2em;
+        padding: 0.5em 0.8em;
         color: #333;
         text-decoration: none;
 
@@ -65,99 +115,161 @@
       }
     }
   }
-
-  &:hover .sub-menu {
-    display: block;
-  }
 }
 
+
+
+/* スマホ時　ナビは非表示 */
 @include tab {
-    .navi {
-      display: none;
-    }
-    
-    .humberger{
-        background-color: $whiteColor;
-        border-radius: 50%;
-        border: 1px solid $blackColor;
-        width: 40px;
-        height: 40px;
-        position: absolute;//要
-        top: 20px;
-        right: 20px;
-        span{
-            position: absolute;
-            content: "";
-            width: 20px;
-            height: 2px;
-            left:9px;
-            background-color: $blackColor;
-            &:nth-child(1){
-                top: 9px;
-            }
-            &:nth-child(2){
-                top: 17px;
-            }
-            &:nth-child(3){
-                top: 25px;
-            }
-        }
-    }
-  
-    .active {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: $whiteColor;
-      height: 100vh;
-      z-index: 100;
-  
-      .site-title {
-        display: none;
-      }
-  
-      .humberger span {
-        transition: 0.5s;
-        z-index: 20;
-  
-        &:nth-child(1) {
-          transform: rotate(45deg);
-          top: 18px;
-        }
-  
-        &:nth-child(2) {
-          display: none;
-        }
-  
-        &:nth-child(3) {
-          transform: rotate(-45deg);
-          top: 18px;
-        }
-      }
-  
-      .navi {
-        display: flex;
-      }
-  
-      .sub-menu {
-        left: 60%;
-        top: -7px;
-      }
-  
-      .navi-menu {
-        flex-direction: column;
-        position: absolute;
-        top: 80px;
-        left: 50%;
-        gap: 100px;
-        transform: translateX(-50%);
-        text-align: center;
-        background-color: $whiteColor;
-        width: 100%;
-        height: 100vh;
-      }
-    }
+  .navi {
+    display: none;
+  }
+  #header .navi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color:$whiteColor;
+    width: 70%;
+    height: 100vh;
+    padding-top: 80px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: left;
+    z-index: 50; // ← メニューは z-index:50 とか高くする
+    /* ここからアニメーション設定 */
+    overflow-y: auto; // ★ここ追加！スクロールできる！
+    position: fixed; // ★ここも変更！fixedにする！
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: all 0.4s ease;
+  }
+
+  // ハンバーガーメニュー開いてるときは、背景スクロール禁止
+  body.no-scroll {
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
   }
   
+
+  #header.active .navi {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+  
+  .humberger {
+    z-index: 50;
+    border-radius: 50%;
+    border: 1px solid $blackColor;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    span {
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      left: 9px;
+      background-color: $blackColor;
+
+      &:nth-child(1) { top: 9px; }
+      &:nth-child(2) { top: 17px; }
+      &:nth-child(3) { top: 25px; }
+    }
+  }
+
+  #header.active .humberger span {
+    transition: 0.5s;
+    z-index: 20;
+
+    &:nth-child(1) { transform: rotate(45deg); top: 18px; }
+    &:nth-child(2) { display: none; }
+    &:nth-child(3) { transform: rotate(-45deg); top: 18px; }
+  }
+
+  /* スマホ サブメニュー閉じているとき*/
+  .menu-item-has-children .sub-menu {
+    display: none;
+    max-height: 0; // ← ここ！
+    transform-origin: top;
+    transition: max-height 0.4s ease; // ← ここに直す！
+    background: none;
+    border: none;
+    box-shadow: none;
+    position: static;
+    margin-top: 8px;
+    overflow: hidden;
+  }
+//スマホサブメニュー開いているとき
+  .menu-item-has-children .sub-menu.open {
+    max-height: 500px; // ← 開いたときだけ高さを大きく！
+    display: block;
+  }
+  .sub-menu .active{
+    display: none;
+  }
+  .navi-menu > li {
+    width: 100%;
+    min-height: 50px;
+  
+  }
+ 
+  .menu-item-has-children > a {
+    display: block;
+    width: 100%;
+    padding: 10px 0; // ← 高さはpaddingでつくる（固定heightはダメ！）
+  }
+  
+}
+
+
+
+
+//レスポンシブメニュー表示時のメイン背景
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.3); // ←グレーっぽい黒半透明
+  opacity: 0;
+  pointer-events: none; // 最初はクリックできない
+  transition: opacity 0.4s ease;
+  z-index: 40; // ヘッダー（50）より下の層にしておく
+}
+@include tab{
+#header.active .overlay {
+  opacity: 1;
+  pointer-events: auto; // 開いたらクリックできる
+}
+}
+
+
+
+// レスポンシブメニューのサブメニューアロー
+
+.menu-arrow{
+  display: none;
+}
+@include tab{
+.menu-arrow {
+  display: inline-block;
+  margin-left: 8px;
+  transform: rotate(90deg); // 最初は下向き
+  transition: transform 0.3s ease; // なめらかに
+}
+
+.menu-item-has-children.open .menu-arrow {
+  transform: rotate(0deg); // 開いたら右向き
+}
+}
+
+
 

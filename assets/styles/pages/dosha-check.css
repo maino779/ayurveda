@@ -4,7 +4,7 @@
 }
 
 .dosha-check-text-title {
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .dosha-check-section label {
@@ -16,6 +16,19 @@
   margin-top: 1.5rem;
   padding: 1rem;
   background: #faefe0;
-  border-radius: 8px;
+  text-align: center;
+}
+
+.btn-dosha-check {
+  margin-bottom: 20px;
+  width: 220px;
+}
+
+.next-button-wrap {
+  text-align: center;
+}
+
+.dosha-type {
+  color: red;
   font-weight: bold;
 }/*# sourceMappingURL=dosha-check.css.map */

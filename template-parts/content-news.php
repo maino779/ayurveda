@@ -1,12 +1,14 @@
 <div class="news-section section" id="news">
 
- 
+<!--  
         <div class="section-title">
-        <?php $page = get_page_by_path('news'); ?>
+        <?php /* $page = get_page_by_path('news'); ?>
         <h2><?php echo $page->post_title; ?></h2>
-        <h3 class="section-subtitle"><?php echo $page->post_content; ?></h3>
+        <h3 class="section-subtitle"><?php echo $page->post_content; */?></h3>
         </div>
-
+        -->
+        
+ 
 
 
 <div class="wrapper">
@@ -62,7 +64,6 @@
     </div>
     </div>
 
-    <a href="<?php echo esc_url(home_url('/popular/')); ?>" class="btn">もっとみる</a>
 
     </div>
 

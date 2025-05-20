@@ -38,10 +38,12 @@
     
       .mainvisual-title-contents {
         position: absolute;
-        top: 55%; // ← ここを調整するだけでOK！（60〜65%くらいがおすすめ）
+        top: 54%; // ← ここを調整するだけでOK！（60〜65%くらいがおすすめ）
         right: 50px;
         transform: translateY(-50%); // このままでOK。ずらした分を戻す
-      
+      @include tab{
+        right: 20px;
+      }
       }
 
     &::before {
@@ -57,23 +59,31 @@
     }
     h1{
         font-family: 'Raleway', sans-serif;
-        font-weight:500;
+        font-weight:600;
         font-size: 48px;
         color: #2a2a2a;
         text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        @include tab{
+            font-size: 38px;
+        }
         @include sp{
             font-size: 28px;
         }
+    
     }
     h2{
-        font-size: 28px;
+        font-size: 21px;
         font-family: 'Alegreya Sans SC', sans-serif;
         font-weight: 500;
         text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
         padding-bottom: 40px;
-        @include sp{
-            font-size: 15px;
+        @include tab{
+            font-size: 18px;
         }
+        @include sp{
+            font-size: 14px;
+        }
+   
     }
 }
 
@@ -102,7 +112,6 @@
 minmax(280px, 1fr): 各カラムの幅を最小280px、最大で利用可能なスペースの割合（1fr）まで拡張可能に設定します。これにより、カラムはコンテナのサイズに応じて柔軟に調整されます。*/
 .post-card-content{
     background: white;
-    border-radius: 20px;
     overflow: hidden;
     height: 100%;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);

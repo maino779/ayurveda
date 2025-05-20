@@ -21,27 +21,27 @@
 
         <nav class="navi scroll-nav">
   <ul class="navi-menu">
-    <li><a href="/" class="menu-title">ホーム</a></li>
+  
     <li><a href="/#about" class="menu-title">アーユルヴェーダとは</a></li>
-    <li><a href="/#test" class="menu-title">ドーシャ診断</a></li>
-    <li class="menu-item menu-item-has-children">
-      <a href="/#blog" class="menu-title">ブログ</a>
+    <li><a href="/#dosha" class="menu-title">ドーシャ診断</a></li>
+    <li class="menu-item  menu-item-has-children">
+      <a href="/#blog" class="menu-title menu-title-blog">ブログ<span class="menu-arrow">></span></a>
       <ul class="sub-menu">
         <?php
         $categories = get_categories([
-          'orderby'    => 'id',       // ← ID順（古い順）
-          'order'      => 'DESC',  // ← 降順（新しいID → 古いID）
-          'orderby' => 'name',
+      
+          'order'      => 'ASC',  // ← 降順（新しいID → 古いID）
+      
           'hide_empty' => false // 記事がなくても表示
         ]);
         foreach ($categories as $category) {
-          echo '<li><a href="' . get_category_link($category->term_id) . '">' . esc_html($category->name) . '</a></li>';
+          echo '<li><a href="' . get_category_link($category->term_id) . '"><span class="sub-menu-left">></span>   ' . esc_html($category->name) . '</a></li>';
         }
         ?>
       </ul>
     </li>
 
-    <li  class="menu-item menu-item-has-children"><a href="/#service" class="menu-title">サービス案内</a>
+    <li  class="menu-item menu-item-has-children"><a href="/#service" class="menu-title menu-title-service">サービス案内 <span class="menu-arrow">></span></a>
     <ul class="sub-menu">
     <?php
     $terms = get_terms([
@@ -53,7 +53,7 @@
 
     if (!is_wp_error($terms)) {
       foreach ($terms as $term) {
-        echo '<li><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
+        echo '<li><a href="' . esc_url(get_term_link($term)) . '"><span class="sub-menu-left">></span>  ' . esc_html($term->name) . '</a></li>';
       }
     }
     ?>
@@ -72,6 +72,8 @@
         <span></span>
       </div>
      
+      <div class="overlay"></div>
+
     </header>
 
    

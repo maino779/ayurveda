@@ -104,13 +104,13 @@ h2{
 .section {
   padding-bottom: 40px;
 }
-.popular-section,
-.dosha-section {
+.pickup-section
+ {
   background-color: $whiteColor;
 }
 
-.about-section,
-.pickup-section,
+.popular-section,
+.dosha-section,
 .news-section,
 .contact-section,
 .privacy-policy-section,
@@ -157,7 +157,7 @@ h2{
   background-color: $greenColor;
   color: $whiteColor;
   font-weight: 600;
-  border-radius: 20px;
+ 
   margin: 60px auto 0 auto;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
   transition: 0.3s ease;
@@ -169,5 +169,6 @@ h2{
   }
   @include tab {
     width: 100%;
+    margin-top: 30px;
   }
 }

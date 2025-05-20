@@ -61,6 +61,6 @@
       </div>
     </div>
 
-    <a href="<?php echo esc_url(home_url('/category/news/')); ?>" class="btn">もっとみる</a>
+    <a href="<?php echo esc_url(home_url('/popular/')); ?>" class="btn">もっとみる</a>
   </div>
 </div>

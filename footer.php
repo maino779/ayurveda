@@ -16,7 +16,7 @@
           'hide_empty' => false // 記事がなくても表示
         ]);
         foreach ($categories as $category) {
-          echo '<li><a href="' . get_category_link($category->term_id) . '">' . esc_html($category->name) . 'のブログ</a></li>';
+          echo '<li><a href="' . get_category_link($category->term_id) . '">' . esc_html($category->name) . 'について</a></li>';
         }
         ?>
       </ul>

@@ -33,35 +33,64 @@
 }
 
 .check-privacy label {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+
+  @include sp {
+    font-size: 14px;
+  }
+}
+
+  .wpcf7-form-control-wrap.checkbox-privacy label {
     display: flex;
     align-items: center;
+    gap: 0.5em;
     flex-wrap: wrap;
-    width: 100%;
-    max-width: 100%;
-    @include sp{
-        font-size: 14px;
+  }
+  .wpcf7-list-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
+  }
+
+  .check-privacy .wpcf7-list-item label {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
+  }
+  .privacy-check p{
+    display: flex;
+    span{
+      padding-left: 4px;
+    }
+    a{
+      color: #007acc;
     }
   }
   
-  .check-privacy label {
+  .wpcf7-acceptance label {
     display: flex;
-    align-items: flex-start;  // ← ✅ 中央じゃなく上寄せにすることで折り返し時ズレ防止
-    flex-wrap: wrap;         // ✅ 折り返しOKにする
-
+    align-items: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
+    font-size: 14px;
   }
   
-  .check-privacy input[type="checkbox"] {
-    margin-top: 4px;         // チェックボックスの縦位置調整
+  .wpcf7-acceptance input[type="checkbox"] {
+    margin: 0;
     flex-shrink: 0;
   }
   
-  .check-privacy a {
-    color: #007acc;
-    padding-left: 5px;
+  .wpcf7-acceptance .privacy-text a {
     text-decoration: underline;
-
-    white-space: nowrap;      // ← ✅「プライバシーポリシー」だけで改行しないように
-    word-break: break-word;  // ✅ モバイルで長いURLがある場合に備えて
+    color: #007acc;
+    white-space: nowrap;
   }
   
+
   
